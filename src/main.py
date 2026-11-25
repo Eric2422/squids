@@ -5,6 +5,9 @@ import numpy.typing as npt
 import scipy
 
 
+M_FLUX_QUANTUM = scipy.constants.value("mag. flux quantum")
+
+
 def delta(
         theta_1: npt.NDArray,
         theta_2: npt.NDArray,
@@ -49,4 +52,4 @@ def delta_deriv(potential: npt.NDArray) -> npt.NDArray:
 
 
 def josephson_inductance(critical_current: np.float64, delta: npt.NDArray):
-    return scipy.constants.value("mag. flux quantum") / (2 * scipy.constants.pi * critical_current * np.cos(delta))
+    return M_FLUX_QUANTUM / (2 * scipy.constants.pi * critical_current * np.cos(delta))

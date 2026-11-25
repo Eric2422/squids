@@ -20,8 +20,8 @@ def delta(
     )
 
 
-def current(delta: npt.NDArray, I_c: npt.NDArray) -> npt.NDArray:
-    return I_c * np.sin(delta)
+def current(delta: npt.NDArray, critical_current: npt.NDArray) -> npt.NDArray:
+    return critical_current * np.sin(delta)
 
 
 def delta_deriv(potential: npt.NDArray) -> npt.NDArray:

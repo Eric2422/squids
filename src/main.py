@@ -18,18 +18,18 @@ def delta(
 
     Parameters
     ----------
-    theta_1 : npt.NDArray
+    theta_1 : :class:`npt.NDArray`
         The phase of the first superconductor.
-    theta_2 : npt.NDArray
+    theta_2 : :class:`npt.NDArray`
         The phase of the second superconductor.
-    magnetic_potential : Callable[[npt.NDArray, np.float64], npt.NDArray]
+    magnetic_potential : Callable[[:class:`npt.NDArray`, :class:`np.float64`], :class:`npt.NDArray`]
         The magnetic potential passing through the SQUID.
-    length : Callable[[npt.NDArray], npt.NDArray]
+    length : Callable[[:class:`npt.NDArray`], :class:`npt.NDArray`]
         The length to integrate the magnetic potential along.
 
     Returns
     -------
-    npt.NDArray
+    :class:`npt.NDArray`
         The gauge-invariant phase difference between the two superconductors.
     """
     return (
@@ -49,14 +49,14 @@ def current(delta: npt.NDArray, critical_current: np.float64) -> npt.NDArray:
 
     Parameters
     ----------
-    delta : npt.NDArray
+    delta : :class:`npt.NDArray`
         THe values of the gauge-invariant phase difference (see :func:`delta`).
-    critical_current : np.float64
+    critical_current : :class:`np.float64`
         The critical current of the Josephson junction.
 
     Returns
     -------
-    npt.NDArray
+    :class:`npt.NDArray`
         The current when no voltage is being applied.
     """
     return critical_current * np.sin(delta)
